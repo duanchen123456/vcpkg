@@ -17,7 +17,7 @@ at https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-3.6
 or are running from Azure Cloud Shell.
 #>
 
-$Location = 'westus2'
+$Location = 'SouthCentralUS'
 $Prefix = 'PrWin-' + (Get-Date -Format 'yyyy-MM-dd')
 $VMSize = 'Standard_F16s_v2'
 $ProtoVMName = 'PROTOTYPE'
@@ -421,11 +421,7 @@ $Vmss = New-AzVmssConfig `
   -SkuName $VMSize `
   -SkuTier 'Standard' `
   -Overprovision $false `
-  -UpgradePolicyMode Manual `
-  -EvictionPolicy Delete `
-  -ScaleInPolicy OldestVM `
-  -Priority Spot `
-  -MaxPrice -1
+  -UpgradePolicyMode Manual
 
 $Vmss = Add-AzVmssNetworkInterfaceConfiguration `
   -VirtualMachineScaleSet $Vmss `

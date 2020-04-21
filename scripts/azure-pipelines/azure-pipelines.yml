@@ -8,7 +8,7 @@ stages:
   - stage: Clean_Tombstones
     displayName: 'Clean Tombstones'
     pool:
-      name: PrWin-2020-04-19
+      name: PrWin-2020-04-20
     jobs:
       - job:
         displayName: 'Clean Tombstones'
